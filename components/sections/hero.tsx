@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
@@ -11,22 +11,21 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden hero-gradient">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6"
+          className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-sm font-medium">
-            <Zap className="w-4 h-4" />
-            Version 4.0 Professional Edition
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 shadow-sm text-sm font-semibold"
+            style={{ 
+              borderColor: 'hsl(201, 96%, 32%)',
+              color: 'hsl(215, 28%, 17%)'
+            }}
+          >
+            <Sparkles className="w-4 h-4" style={{ color: 'hsl(173, 58%, 39%)' }} />
+            Professional UX Analysis Platform
           </span>
         </motion.div>
 
@@ -34,12 +33,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 font-mono leading-tight"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+          style={{ 
+            color: 'hsl(216, 33%, 12%)',
+            fontFamily: 'JetBrains Mono, monospace'
+          }}
         >
-          Your UX Debt
+          Your UX Debt Is
           <br />
-          <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-            Is Costing You
+          <span className="bg-gradient-to-r from-[hsl(201,96%,32%)] via-[hsl(173,58%,39%)] to-[hsl(201,96%,32%)] bg-clip-text text-transparent">
+            Costing You Revenue
           </span>
         </motion.h1>
 
@@ -47,9 +50,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+          style={{ color: 'hsl(215, 19%, 35%)' }}
         >
-          Get a transparent UX debt score with <span className="text-purple-600 font-bold">real analysis</span> for your website and <span className="text-pink-600 font-bold">specific actions</span> to improve.
+          Get actionable UX analysis with{' '}
+          <span className="font-bold" style={{ color: 'hsl(201, 96%, 28%)' }}>
+            unique insights
+          </span>{' '}
+          for your website. Know exactly what to fix and why it matters.
         </motion.p>
 
         <motion.div
@@ -61,18 +69,23 @@ export function Hero() {
           <Button
             onClick={scrollToAnalyzer}
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-8 py-6 text-lg group shadow-lg"
+            className="text-white font-bold px-10 py-7 text-lg group shadow-lg hover:shadow-xl transition-all gradient-professional"
           >
-            Analyze My Product
+            Analyze My Website
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
             onClick={scrollToAnalyzer}
             size="lg"
             variant="outline"
-            className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-6 text-lg"
+            className="px-10 py-7 text-lg font-semibold transition-all"
+            style={{
+              borderWidth: '2px',
+              borderColor: 'hsl(214, 32%, 91%)',
+              color: 'hsl(215, 28%, 17%)'
+            }}
           >
-            See How It Works
+            See Example Report
           </Button>
         </motion.div>
 
@@ -80,19 +93,54 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
-          <div className="p-6 rounded-xl bg-white border border-purple-100 shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-4xl font-bold text-purple-600 mb-2 font-mono">10s</div>
-            <div className="text-gray-600">Analysis Time</div>
+          <div className="p-8 rounded-xl bg-white border-2 shadow-sm hover:shadow-md transition-all"
+            style={{ borderColor: 'hsl(214, 32%, 91%)' }}
+          >
+            <div className="text-5xl font-bold mb-3" 
+              style={{ 
+                color: 'hsl(201, 96%, 32%)',
+                fontFamily: 'JetBrains Mono, monospace'
+              }}
+            >
+              10s
+            </div>
+            <div className="font-semibold" style={{ color: 'hsl(215, 28%, 17%)' }}>
+              Analysis Time
+            </div>
           </div>
-          <div className="p-6 rounded-xl bg-white border border-pink-100 shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-4xl font-bold text-pink-600 mb-2 font-mono">Unique</div>
-            <div className="text-gray-600">Real URL Analysis</div>
+          
+          <div className="p-8 rounded-xl bg-white border-2 shadow-sm hover:shadow-md transition-all"
+            style={{ borderColor: 'hsl(214, 32%, 91%)' }}
+          >
+            <div className="text-5xl font-bold mb-3" 
+              style={{ 
+                color: 'hsl(173, 58%, 39%)',
+                fontFamily: 'JetBrains Mono, monospace'
+              }}
+            >
+              Real
+            </div>
+            <div className="font-semibold" style={{ color: 'hsl(215, 28%, 17%)' }}>
+              URL Analysis
+            </div>
           </div>
-          <div className="p-6 rounded-xl bg-white border border-purple-100 shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-4xl font-bold text-purple-600 mb-2 font-mono">100%</div>
-            <div className="text-gray-600">Transparent</div>
+          
+          <div className="p-8 rounded-xl bg-white border-2 shadow-sm hover:shadow-md transition-all"
+            style={{ borderColor: 'hsl(214, 32%, 91%)' }}
+          >
+            <div className="text-5xl font-bold mb-3" 
+              style={{ 
+                color: 'hsl(201, 96%, 32%)',
+                fontFamily: 'JetBrains Mono, monospace'
+              }}
+            >
+              100%
+            </div>
+            <div className="font-semibold" style={{ color: 'hsl(215, 28%, 17%)' }}>
+              Transparent
+            </div>
           </div>
         </motion.div>
       </div>
